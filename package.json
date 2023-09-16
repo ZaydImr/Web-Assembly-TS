@@ -1,0 +1,37 @@
+{
+  "name": "web-assembly",
+  "version": "0.0.1",
+  "description": "Simple web assembly test :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaydImr/Web-Assembly-TS.git"
+  },
+  "keywords": [
+    "web-assembly",
+    "assembly"
+  ],
+  "author": "Zayd EL IMRANI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZaydImr/Web-Assembly-TS/issues"
+  },
+  "homepage": "https://github.com/ZaydImr/Web-Assembly-TS#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.27.9"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}
